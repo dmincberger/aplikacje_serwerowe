@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="num1" id="nm1">
+    <input type="number" name="num2" id="nm2">
+    <select name="Wybor" id="Wyb">
+        <option value="Dodawanie" id="Dod">Dodawanie</option>
+        <option value="Odejmowanie" id="Ode">Odejmowanie</option>
+        <option value="Mnozenie" id="Mno">Mnożenie</option>
+        <option value="Dzielenie" id="Dzi">Dzielenie</option>
+        <option value="Wszystko" id="Wsz">Wszystko</option>
+    </select>
+    <div id="klik" style="width: 200px; height: 200px; background-color: blue;">KLIK</div>
+    <script>
+        document.getElementById("klik").onclick = function () {
+            console.log("kkk");
+            const data = JSON.stringify({
+                num1: document.getElementById("nm1").value,
+                num2: document.getElementById("nm2").value,
+                Wyb: document.getElementById("Wyb").value
+            })
+            console.log(data)
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: data
+            };
+
+            fetch("/Kalk", options)
+                .then(response => response.json()) // konwersja na obiekt json, jeśli konieczne
+                .then(data => alert(JSON.stringify(data, null, 5))) // sformatowane z wcięciami dane odpowiedzi z serwera
+                .catch(error => console.log(error));
+        }
+
+    </script>
+</body>
+
+</html>

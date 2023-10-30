@@ -1,0 +1,9 @@
+<form action="/wybor" method="GET">
+    <select size="3" name="sel">
+        {{#each fields}}
+        <option value={{name}}>{{name}}</option>
+        {{/each}}
+
+    </select>
+    <button type="submit">Wyślij</button>
+</form>

@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+a {
+    margin: 10px;
+}
+
+#Title {
+    color: pink;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <input type="range" step="1" min="0" max="30" id="prange"><br>
+    <input type="range" step="2.5" min="0" max="75" style="width: 500px;" id="drange">
+
+    <script>
+        document.getElementById("prange").oninput = function () {
+            const data = JSON.stringify({
+                prange: document.getElementById("prange").value,
+                drange: document.getElementById("drange").value
+            })
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: data
+            };
+            fetch("/range", options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    document.getElementById("drange").value = Number.parseInt(data["prange"]) * 2.5
+                })
+                .catch(error => console.log(error));
+        }
+
+    </script>
+</body>
+
+</html>

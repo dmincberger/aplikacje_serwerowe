@@ -1,0 +1,16 @@
+div {
+    width: auto;
+    height: 150px;
+    background-color: bisque;
+    color: blue;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+}
+
+footer {
+    background-color: gray;
+    height: 500px;
+    width: auto;
+    color: blue;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="range" min="0" max="255" step="1" id="red" class="input">red<br>
+    <input type="range" min="0" max="255" step="1" id="green" class="input">green<br>
+    <input type="range" min="0" max="255" step="1" id="blue" class="input">blue<br>
+    <input type="range" min="0" max="100" step="1" id="opac" class="input">opac<br>
+    <div id="kw1" style="width: 500px; height:500px; background-color: rgb(2, 3, 4); opacity: 10%;"></div>
+    <script>
+        document.getElementsByClassName("input").oninput = function () {
+            console.log("test")
+            const data = JSON.stringify({
+                red: document.getElementById("red").value,
+                green: document.getElementById("green").value,
+                blue: document.getElementById("blue").value,
+                opac: document.getElementById("opac").value
+            })
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: data
+            };
+            fetch("/range", options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    document.getElementById("red").value = Number.parseInt(data["red"])
+                    document.getElementById("green").value = Number.parseInt(data["green"])
+                    document.getElementById("blue").value = Number.parseInt(data["blue"])
+                    document.getElementById("opac").value = Number.parseInt(data["opac"])
+                })
+                .catch(error => console.log(error));
+        }
+
+    </script>
+    </script>
+</body>
+
+</html>

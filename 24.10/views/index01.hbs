@@ -1,0 +1,11 @@
+<div id="users">
+    <h1>Users</h1>
+</div>
+<form action="/login" method="get">
+    <input type="text" name="login">
+    <input type="text" name="password">
+    <button type="submit">prześlij</button>
+</form>
+{{#each x}}
+<h4>{{timestamp}} {{login}} {{password}}</h4>
+{{/each}}
