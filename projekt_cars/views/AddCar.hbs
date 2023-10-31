@@ -1,0 +1,15 @@
+<h1>add car page</h1>
+{{#if id_auta}}
+<div class="container">Auto o id {{id_auta}} dodane do database</div>
+{{else}}
+brak autora
+{{/if}}
+<form method="POST" action="/Addcar">
+    <input type="checkbox" name="ubezpieczenie">Ubezpieczony
+    <input type="checkbox" name="benzyna">benzyna
+    <input type="checkbox" name="uszkodzenie">Uszkodzony
+    <input type="checkbox" name="naped">Napęd 4x4
+    <button type="submit" name="przycisk" value="true">add</button>
+
+
+</form>

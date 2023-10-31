@@ -11,13 +11,13 @@ const coll1 = new Datastore({
 // };
 
 
-// coll1.insert(doc, function (err, newDoc) {
-//     console.log("dodano dokument (obiekt):")
-//     console.log(newDoc)
-//     console.log("losowe id dokumentu: " + newDoc._id)
+coll1.insert(doc, function (err, newDoc) {
+    console.log("dodano dokument (obiekt):")
+    console.log(newDoc)
+    console.log("losowe id dokumentu: " + newDoc._id)
 
 
-// });
+});
 // console.log("PRZED FOR: " + new Date().getMilliseconds()) // 547
 // for (let i = 0; i < 3; i++) {
 //     let doc = {
