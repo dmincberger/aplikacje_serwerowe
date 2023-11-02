@@ -65,6 +65,16 @@ app.get("/Listcars", function (req, res) {
     });
 })
 
+app.get("/deleteCars", function (req, res) {
+    coll1.find({}, function (err, docs) {
+        let context = {
+            x: docs
+        }
+        console.log(context)
+        res.render('DeleteCar.hbs', context)
+    });
+})
+
 app.listen(PORT, function () {
     console.log(`Serwer dziala na porcie ${PORT}`)
 })

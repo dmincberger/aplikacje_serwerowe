@@ -1,0 +1,23 @@
+<h1>delete cars page</h1>
+<table>
+    <tr>
+        <th>_id</th>
+        <th>Ubezpieczony</th>
+        <th>benzyna</th>
+        <th>Uszkodzony</th>
+        <th>naped4x4</th>
+    </tr>
+    {{#each x}}
+    <tr>
+        <input type="checkbox">
+        <td>{{_id}}</td>
+        <td>{{ubezpieczenie}}</td>
+        <td>{{benzyna}}</td>
+        <td>{{uszkodzenie}}</td>
+        <td>{{naped}}</td>
+        <td><button
+                onclick="alert('id: {{_id}}\n ubezpieczony: {{ubezpieczenie}}\n beznyna: {{benzyna}}\n uszkodzony: {{uszkodzenie}}\n naped4x4: {{naped}}')">INFO</button>
+        </td>
+    </tr>
+    {{/each}}
+</table>
