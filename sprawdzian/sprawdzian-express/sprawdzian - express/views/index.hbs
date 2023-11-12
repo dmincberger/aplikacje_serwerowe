@@ -1,0 +1,29 @@
+<h1>SPRAWDZIAN</h1>
+<form action="/send" method="GET">
+    {{#each items}}
+    {{#if (checkStars stars @index)}}
+    <input type="radio" name="radio" value={{stars}}>{{stars}}
+    {{/if}}
+    {{/each}}
+    <select name="select">
+        <option value="none">--wybierz--</option>
+        {{#each items}}
+        {{#if (checkCategory category @index)}}
+        <option value={{category}}>{{category}}</option>
+        {{/if}}
+        {{/each}}
+    </select>
+    <input type="submit" value="FILTRUJ">
+</form>
+
+<table>
+    <tr>
+        <th>NAZWA</th>
+        <th>KATEGORIA</th>
+        <th>CENA</th>
+        <th>OCENA</th>
+    </tr>
+    {{#each items}}
+    {{> row}}
+    {{/each}}
+</table>

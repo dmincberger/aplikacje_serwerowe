@@ -1,0 +1,32 @@
+<h3>{{header}}</h3>
+<table>
+    <tr>
+        <td>miasto</td>
+        <td>pogoda</td>
+        <td>temperatura</td>
+        <td>smog</td>
+        <td>szczegoly</td>
+    </tr>
+    {{#each locations}}
+    <tr>
+        <td>{{name}}</td>
+        <td><img src="{{iconUrl}}" alt="cunningham"></td>
+        <td>
+            <div class="temp">
+                {{temp}}℃
+                {{weather}}
+            </div>
+        </td>
+        <td>
+            <div class="smog">
+                {{smogTitle}}
+                {{smogDesc}}
+                <img src="{{smogUrl}}" alt="cunningham" width="100px">
+            </div>
+        </td>
+        <td>
+            <a href="{{forecastUrl}}">zobacz</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

@@ -1,0 +1,39 @@
+<h1>WYBRANE</h1>
+<input type="button" name="btn" id="btn" value="LISTA / TABELA">
+<div id="box1" class="flex">
+    {{#each items}}
+    {{#if (checkCorrect category ../catt stars ../radd)}}
+    <div class="item">{{title}}
+        <div class="text">{{stars}}</div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>
+
+<div id="box2" class="flex2 hidden">
+    {{#each items}}
+    {{#if (checkCorrect category ../catt stars ../radd)}}
+    <div class="item item2">{{title}}
+        <div class="text">{{stars}}</div>
+    </div>
+    {{/if}}
+    {{/each}}
+</div>
+
+<script>
+    let bool = true;
+    const btn = document.getElementById("btn");
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+
+    btn.onclick = () => {
+        if (bool) {
+            box1.classList.add("hidden");
+            box2.classList.remove("hidden");
+        } else {
+            box1.classList.remove("hidden");
+            box2.classList.add("hidden");
+        }
+        bool = !bool;
+    }
+</script>

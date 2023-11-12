@@ -1,9 +1,36 @@
-{"ubezpieczenie":"NIE","benzyna":"TAK","uszkodzenie":"TAK","naped":"NIE","_id":"DMrzVLUxdAu7GYB0"}
-{"ubezpieczenie":"NIE","benzyna":"TAK","uszkodzenie":"TAK","naped":"NIE","_id":"GVofhcmA8PeJxTIr"}
-{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"TAK","naped":"TAK","_id":"NZMRuFAIaYrNFBje"}
-{"ubezpieczenie":"NIE","benzyna":"TAK","uszkodzenie":"TAK","naped":"NIE","_id":"QaJjGi33wEwf0xRo"}
-{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"TAK","_id":"TGYke33kPoWxLr8i"}
-{"ubezpieczenie":"NIE","benzyna":"TAK","uszkodzenie":"TAK","naped":"NIE","_id":"Td7SjUPLdBzZiCgj"}
-{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","_id":"W3PaSNrdLnbTTlHx"}
-{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"TAK","_id":"fOwz5LJFBWImhjbq"}
-{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","_id":"pKto5Kwcp2HH3la4"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"tAcnPgM3BOzF7st8"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"lxfnJUbZYAO25iXq"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"ZS3I3wPhf1pkJxJn"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"5rDZBOLeMmr68gNn"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"81sVSdBchtRaO2Wg"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"bU8S2jlLAMkBSD6N"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"oRZPt3cuhjU75vv7"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"oETBMm3BadYdQ8fH"}
+{"$$deleted":true,"_id":"5rDZBOLeMmr68gNn"}
+{"$$deleted":true,"_id":"81sVSdBchtRaO2Wg"}
+{"$$deleted":true,"_id":"ZS3I3wPhf1pkJxJn"}
+{"$$deleted":true,"_id":"bU8S2jlLAMkBSD6N"}
+{"$$deleted":true,"_id":"lxfnJUbZYAO25iXq"}
+{"$$deleted":true,"_id":"oETBMm3BadYdQ8fH"}
+{"$$deleted":true,"_id":"oRZPt3cuhjU75vv7"}
+{"$$deleted":true,"_id":"tAcnPgM3BOzF7st8"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"oSGrVhZDaax1eSSZ"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"kJwpzaKa42Hwiyd8"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"eXLJlpQ36VWyC6jF"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":"TAK","_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":"TAK","_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"TAK","edit":null,"_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":"TAK","_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"NIE","benzyna":"NIE","uszkodzenie":"NIE","naped":"NIE","edit":null,"_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"BRAK DANYCH","edit":null,"_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"BRAK DANYCH","edit":null,"_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"BRAK DANYCH","edit":null,"_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"BRAK DANYCH","edit":null,"_id":"QZcWdZT8hVtcZhuo"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"TAK","edit":"TAK","_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"TAK","edit":null,"_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"TAK","edit":"TAK","_id":"5ZBMcBiw8SqobEpp"}
+{"ubezpieczenie":"TAK","benzyna":"TAK","uszkodzenie":"TAK","naped":"TAK","edit":null,"_id":"5ZBMcBiw8SqobEpp"}

@@ -1,0 +1,55 @@
+<h1>list cars page</h1>
+<table class="list table">
+    <tr>
+        <th>_id</th>
+        <th>Ubezpieczony</th>
+        <th>benzyna</th>
+        <th>Uszkodzony</th>
+        <th>naped4x4</th>
+    </tr>
+    <form method="get" action="/Updatecar">
+        {{#each x}}
+        {{#if edit}}
+        <tr>
+            <td>{{_id}}</td>
+            <td><select name="ubezpieczenie">
+                    <option value="TAK">TAK</option>
+                    <option value="NIE">NIE</option>
+                    <option value="BRAK DANYCH">BRAKDANYCH</option>
+                </select></td>
+            <td><select name="benzyna">
+                    <option value="TAK">TAK</option>
+                    <option value="NIE">NIE</option>
+                    <option value="BRAK DANYCH">BRAKDANYCH</option>
+                </select></td>
+            <td><select name="uszkodzenie">
+                    <option value="TAK">TAK</option>
+                    <option value="NIE">NIE</option>
+                    <option value="BRAK DANYCH">BRAKDANYCH</option>
+                </select></td>
+            <td><select name="naped">
+                    <option value="TAK">TAK</option>
+                    <option value="NIE">NIE</option>
+                    <option value="BRAK DANYCH">BRAKDANYCH</option>
+                </select></td>
+            <td>
+                <button formaction="/Confirmupdate" name="Update" value="{{_id}}" class="btn btn-danger">UPDATE</button>
+            </td>
+            <td>
+                <button formaction="/Editcars" name="Cancel" value="{{_id}}" class="btn btn-primary">CANCEL</button>
+            </td>
+        </tr>
+        {{else}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{ubezpieczenie}}</td>
+            <td>{{benzyna}}</td>
+            <td>{{uszkodzenie}}</td>
+            <td>{{naped}}</td>
+            <td><button formaction="/Updatecar" name="Updated" value={{_id}} class="btn btn-info">EDIT</button>
+            </td>
+        </tr>
+        {{/if}}
+        {{/each}}
+    </form>
+</table>

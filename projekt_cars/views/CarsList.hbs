@@ -1,5 +1,7 @@
+<link src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 <h1>list cars page</h1>
-<table>
+<table class="list table table-hover">
     <tr>
         <th>_id</th>
         <th>Ubezpieczony</th>
@@ -14,7 +16,7 @@
         <td>{{benzyna}}</td>
         <td>{{uszkodzenie}}</td>
         <td>{{naped}}</td>
-        <td><button
+        <td><button class="btn btn-primary"
                 onclick="alert('id: {{_id}}\n ubezpieczony: {{ubezpieczenie}}\n beznyna: {{benzyna}}\n uszkodzony: {{uszkodzenie}}\n naped4x4: {{naped}}')">INFO</button>
         </td>
     </tr>

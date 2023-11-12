@@ -1,0 +1,31 @@
+<div id="main">
+    <div id="przedmioty">
+        <h1>Wyswietlenie calej tablicy jedno lub dwu wymiarowej: </h1>
+
+        <h1>{{{langs}}}</h1>
+        <h1>{{digits}}</h1>
+    </div>
+    <div id="elementy">
+        <h1>Pobranie elementu z tablicy:</h1>
+        <h1>{{langs.[0]}}</h1>
+        <h1>{{digits.[0].[1]}}</h1>
+    </div>
+    <div id="iteracja">
+        <h1>Iteracja przez tablice:</h1>
+        {{#each countries}}
+        <h1>{{@index}} - {{this}}</h1>
+        {{/each}}
+    </div>
+    <div id="obiekt">
+        <h1>Iteracja przez obiekt:</h1>
+        {{#each user}}
+        <h1> {{@index}} - {{@key}} - {{this}}</h1>
+        {{/each}}
+    </div>
+    <div id="tablicaobiektow">
+        <h1>Iteracja przez tablice obiektow</h1>
+        {{#each books}}
+        <h1> {{@index}} - {{title}}</h1>
+        {{/each}}
+    </div>
+</div>

@@ -23,8 +23,11 @@ app.get("/", function (req, res) {
     res.render('index.hbs')
 })
 
+
+
 app.get("/Addcar", function (req, res) {
     res.render('AddCar.hbs')
+
 })
 
 app.post("/Addcar", function (req, res) {
@@ -34,24 +37,20 @@ app.post("/Addcar", function (req, res) {
         let benzyna = req.body.benzyna
         let uszkodzenie = req.body.uszkodzenie
         let naped = req.body.naped
-        console.log(req.query.przycisk)
         const doc = {
             ubezpieczenie: ubezpieczenie == undefined ? "NIE" : "TAK",
             benzyna: benzyna == undefined ? "NIE" : "TAK",
             uszkodzenie: uszkodzenie == undefined ? "NIE" : "TAK",
-            naped: naped == undefined ? "NIE" : "TAK"
+            naped: naped == undefined ? "NIE" : "TAK",
+            edit: null
         }
         coll1.insert(doc, function (err, newDoc) {
-            // console.log("dodano dokument (obiekt):")
-            // console.log(newDoc)
-            // console.log("losowe id dokumentu: " + newDoc._id)
             const context = {
                 id_auta: newDoc._id
             }
             res.render('AddCar.hbs', context)
         });
     }
-    // console.log(naped) on jesli przesle, undefined jesli nie zaznacze
 
 })
 
@@ -60,7 +59,6 @@ app.get("/Listcars", function (req, res) {
         let context = {
             x: docs
         }
-        console.log(context)
         res.render('CarsList.hbs', context)
     });
 })
@@ -68,13 +66,145 @@ app.get("/Listcars", function (req, res) {
 app.get("/deleteCars", function (req, res) {
     coll1.find({}, function (err, docs) {
         let context = {
-            x: docs
+            x: docs,
+            wiadomosc: "Wybierz auta/auto do usuniecia:"
         }
-        console.log(context)
         res.render('DeleteCar.hbs', context)
     });
 })
 
-app.listen(PORT, function () {
-    console.log(`Serwer dziala na porcie ${PORT}`)
+
+
+app.get("/Usunauto", function (req, res) {
+    console.log(req.query.lol)
+    id = req.query.przycisk_auta
+    coll1.remove({ _id: id }, {}, function (err, numRemoved) {
+
+        ("Usunięto dokumenty: ", numRemoved)
+    })
+    coll1.find({}, function (err, docs) {
+        let context = {
+            x: docs,
+            wiadomosc: "Usunięto auto"
+        }
+        res.render('DeleteCar.hbs', context)
+    });
 })
+
+app.get("/Usunwszystkie", function (req, res) {
+    coll1.remove({}, { multi: true }, function (err, numRemoved) {
+        ("usunięto wszystkie dokumenty: ", numRemoved)
+        context = {
+            wiadomosc: "Usunięto wszystkie auta!"
+        }
+        res.render("DeleteCar.hbs", context)
+    });
+})
+
+app.get("/Usunauta", function (req, res) {
+    let count = -1
+    for (let key in req.query) {
+        coll1.remove({ _id: key }, {}, function (err, numRemoved) {
+            count = count + 1
+        })
+    }
+    coll1.find({}, function (err, docs) {
+        let context = {
+            x: docs,
+            count: count,
+            wiadomosc: count == 0 ? "Wybierz przynajmniej jedno auto" : "Usunięto "
+        }
+        res.render('DeleteCar.hbs', context)
+    });
+})
+
+app.get("/Editcars", function (req, res) {
+    coll1.find({}, function (err, docs) {
+        coll1.findOne({ edit: "TAK" }, function (err, doc) {
+            console.log(doc)
+            if (doc != null) {
+                coll1.update(
+                    { _id: doc._id, },
+                    { $set: { edit: null } },
+                    {},
+                    function (err, numReplaced) {
+                    }
+                )
+            }
+        })
+        let context = {
+            x: docs,
+        }
+        res.render('EditCar.hbs', context)
+    })
+})
+
+app.get("/Updatecar", function (req, res) {
+    let update = req.query.Updated
+    update = Object.values(update).join("")
+    coll1.update(
+        { _id: update, },
+        { $set: { edit: "TAK" } },
+        {},
+        function (err, numReplaced) {
+        }
+    )
+    coll1.find({}, function (err, docs) {
+        coll1.findOne({ edit: "TAK" }, function (err, doc) {
+            if (doc != null) {
+                coll1.update(
+                    { _id: doc._id, },
+                    { $set: { edit: null } },
+                    {},
+                    function (err, numReplaced) {
+                    }
+                )
+            }
+        })
+        let context = {
+            x: docs
+        }
+        res.render('EditCar.hbs', context)
+    })
+})
+
+app.get("/Confirmupdate", function (req, res) {
+    let update = req.query.Update
+    let ubezpieczenie = req.query.ubezpieczenie
+    let benzyna = req.query.benzyna
+    let uszkodzenie = req.query.uszkodzenie
+    let naped = req.query.naped
+    update = Object.values(update).join("")
+    console.log(update)
+    coll1.update(
+        { _id: update, },
+        { $set: { edit: null, ubezpieczenie: ubezpieczenie, benzyna: benzyna, uszkodzenie: uszkodzenie, naped: naped } },
+        {},
+        function (err, numReplaced) {
+        }
+    )
+    coll1.find({}, function (err, docs) {
+        coll1.findOne({ edit: "TAK" }, function (err, doc) {
+            console.log(doc)
+            if (doc != null) {
+                coll1.update(
+                    { _id: doc._id, },
+                    { $set: { edit: null } },
+                    {},
+                    function (err, numReplaced) {
+                    }
+                )
+            }
+        })
+        let context = {
+            x: docs,
+        }
+        res.render('EditCar.hbs', context)
+    })
+
+})
+
+app.listen(PORT, function () {
+    (`Serwer dziala na porcie ${PORT}`)
+})
+

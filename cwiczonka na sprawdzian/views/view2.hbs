@@ -1,0 +1,11 @@
+<div id="ksiazki">
+    {{#each books}}
+    <div id="autor">
+        {{#if author}}
+        <h1>{{author}}, {{title}}</h1>
+        {{else}}
+        <h1>--- brak autora ---</h1>
+        {{/if}}
+    </div>
+    {{/each}}
+</div>

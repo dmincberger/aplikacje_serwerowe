@@ -1,3 +1,5 @@
+<link src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 <h1>delete cars page</h1>
 <table>
     <tr>
@@ -7,17 +9,33 @@
         <th>Uszkodzony</th>
         <th>naped4x4</th>
     </tr>
-    {{#each x}}
-    <tr>
-        <input type="checkbox">
-        <td>{{_id}}</td>
-        <td>{{ubezpieczenie}}</td>
-        <td>{{benzyna}}</td>
-        <td>{{uszkodzenie}}</td>
-        <td>{{naped}}</td>
-        <td><button
-                onclick="alert('id: {{_id}}\n ubezpieczony: {{ubezpieczenie}}\n beznyna: {{benzyna}}\n uszkodzony: {{uszkodzenie}}\n naped4x4: {{naped}}')">INFO</button>
-        </td>
-    </tr>
-    {{/each}}
+    <form method="GET" action="/Usunauta">
+        <input type="submit" onclick="return confirm('Usunac wszystkie auta?')" formaction="/Usunwszystkie"
+            value="DELETE ALL" name="" class="btn btn-danger" style="margin-right: 10px;">
+
+        <input type="submit" onclick="return confirm('Usunac te auta?')" name="usuniete_auta" value="Delete Selected"
+            class="btn btn-danger">
+        {{#if count}}
+        <div>
+            <p class="alert alert-success">{{wiadomosc}}{{count}}aut</p>
+        </div>
+        {{else}}
+        <div>
+            <p class="alert alert-info">{{wiadomosc}}</p>
+        </div>
+        {{/if}}
+        {{#each x}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{ubezpieczenie}}</td>
+            <td>{{benzyna}}</td>
+            <td>{{uszkodzenie}}</td>
+            <td>{{naped}}</td>
+            <td><button type="submit" onclick="return confirm('Usunac to auto?')" formaction="/Usunauto" value={{_id}}
+                    name="przycisk_auta" class="btn btn-danger" style="margin-right: 10px;">DELETE</button>
+            </td>
+            <td><input type="checkbox" name={{_id}} formaction="/Usunauta"></td>
+        </tr>
+        {{/each}}
+    </form>
 </table>
